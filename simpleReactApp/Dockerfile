@@ -18,7 +18,7 @@ FROM nginx:alpine
 COPY --from=build /app/build /usr/share/nginx/html
 
 # Argument to select nginx config (development or production)
-# ARG NGINX_ENV=production
+ARG NGINX_ENV=production
 # Copy the appropriate nginx config based on environment
 COPY nginx.conf.${NGINX_ENV} /etc/nginx/conf.d/default.conf
 
